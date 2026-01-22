@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Portfolio | Professional Identity</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">JD.</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#labs">Lab Writeups</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+  <header id="home" class="hero">
+    <div class="hero-content">
+        <img src="profile.jpeg" alt="Your Name" class="profile-img">
+        <h1>Hi, I'm <span class="highlight">John Doe</span></h1>
+        <p class="tagline">
+            I am a <span id="typewriter"></span><span class="cursor">the goat|</span>
+        </p>
+        <p class="statement">Building secure, scalable web solutions and solving complex digital puzzles.</p>
+    </div>
+</header>
+
+   <section id="resume" class="section">
+    <h2 class="section-title">Professional Resume</h2>
+    
+    <div class="resume-grid">
+        <div class="resume-item">
+            <div class="resume-icon">💼</div>
+            <h3><a href="#" class="pulse-link">Experience</a></h3>
+            <div class="resume-detail">
+                <p><strong>Senior Web Developer @ TechCorp</strong></p>
+                <span class="date">2023 - Present</span>
+                <p>Leading the frontend migration to React and optimizing site performance by 40%.</p>
+            </div>
+            <div class="resume-detail">
+                <p><strong>Junior Developer @ DataSystems</strong></p>
+                <span class="date">2021 - 2023</span>
+                <p>Developed internal dashboards and automated report generation using Python.</p>
+            </div>
+        </div>
+
+        <div class="resume-item">
+            <div class="resume-icon">🎓</div>
+            <h3><a href="#" class="pulse-link">Education</a></h3>
+            <div class="resume-detail">
+                <p><strong>BSc. Computer Science</strong></p>
+                <p>University of Technology | 2021</p>
+            </div>
+            
+            <h3 class="margin-top"><a href="#" class="pulse-link">Certifications</a></h3>
+            <div class="resume-detail">
+                <p>• CompTIA Security+</p>
+                <p>• AWS Certified Solutions Architect</p>
+            </div>
+        </div>
+
+        <div class="resume-item">
+            <div class="resume-icon">🛠️</div>
+            <h3><a href="#" class="pulse-link">Technical Skills</a></h3>
+            <p class="instruction">Click a skill to highlight related projects</p>
+            <div class="skills-container">
+                <a href="#" class="skill-pill">JavaScript</a>
+                <a href="#" class="skill-pill">React</a>
+                <a href="#" class="skill-pill">Python</a>
+                <a href="#" class="skill-pill">SQL</a>
+                <a href="#" class="skill-pill">Node.js</a>
+                <a href="#" class="skill-pill">Docker</a>
+                <a href="#" class="skill-pill">Nmap</a>
+                <a href="#" class="skill-pill">Git</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="projects" class="section">
+    <h2 class="section-title">Featured Projects</h2>
+    
+    <div class="projects-grid">
+        <article class="project-card">
+            <div class="project-image">
+                <img src="project1-thumb.jpg" alt="E-Commerce API">
+            </div>
+            <div class="project-info">
+                <h3>Secure E-Commerce API</h3>
+                <p>A RESTful backend built with Node.js, featuring JWT authentication and Stripe integration.</p>
+                <div class="project-tags">
+                    <span>Node.js</span> <span>MongoDB</span> <span>Docker</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="btn-primary">View Repo</a>
+                    <a href="#" class="btn-secondary">Live Demo</a>
+                </div>
+            </div>
+        </article>
+
+        <article class="project-card">
+            <div class="project-image">
+                <img src="project2-thumb.jpg" alt="Network Scanner">
+            </div>
+            <div class="project-info">
+                <h3>Python Network Scanner</h3>
+                <p>Automated tool for discovering active devices and open ports within a local subnet.</p>
+                <div class="project-tags">
+                    <span>Python</span> <span>Scapy</span> <span>Linux</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="btn-primary">View Repo</a>
+                </div>
+            </div>
+        </article>
+
+        <article class="project-card">
+            <div class="project-image">
+                <img src="project3-thumb.jpg" alt="AI Chatbot">
+            </div>
+            <div class="project-info">
+                <h3>AI Support Agent</h3>
+                <p>Custom LLM implementation for automated customer support using OpenAI's API.</p>
+                <div class="project-tags">
+                    <span>React</span> <span>OpenAI</span> <span>Tailwind</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="btn-primary">View Repo</a>
+                    <a href="#" class="btn-secondary">Live Demo</a>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+
+   <section id="analysis" class="section">
+    <h2 class="section-title">Data Analysis Case Studies</h2>
+    
+    <div class="labs-container">
+        <article class="lab-card">
+            <div class="lab-header">
+                <span class="status-dot analysis-dot"></span>
+                <span class="lab-category">Project: E-Commerce Sales Insights</span>
+            </div>
+            
+            <div class="lab-body">
+                <div class="lab-section">
+                    <h4><i class="icon">📊</i> Business Problem</h4>
+                    <p>Identifying seasonal churn rates and declining customer lifetime value (CLV) across the Q3-Q4 period.</p>
+                </div>
+
+                <div class="lab-section">
+                    <h4><i class="icon">🧪</i> Methodology</h4>
+                    <p>Extracted data via SQL, performed exploratory data analysis (EDA) in Python (Pandas), and handled missing values using mean-imputation.</p>
+                </div>
+
+                <div class="lab-meta-grid">
+                    <div class="meta-item">
+                        <strong>Tech Stack:</strong>
+                        <code>Python (Pandas/Matplotlib)</code> <code>SQL</code> <code>Tableau</code>
+                    </div>
+                </div>
+
+                <div class="lab-screenshot">
+                    <div class="image-placeholder"> [Visualization: Sales Trend Correlation Heatmap] </div>
+                </div>
+
+                <div class="lab-lessons">
+                    <h4><i class="icon">📈</i> Key Insights & Results</h4>
+                    <ul>
+                        <li>Discovered a 15% drop in retention linked to checkout latency.</li>
+                        <li>Automated the weekly reporting pipeline, saving 4 hours of manual entry.</li>
+                        <li>Recommended a targeted email campaign that recovered 5% of churned users.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+
+    <footer id="contact">
+    <div class="footer-container">
+        <div class="contact-header">
+            <h2>Get In Touch</h2>
+            <p>I'm currently looking for new opportunities. My inbox is always open!</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="footer-item">
+                <span class="footer-label">Email</span>
+                <div class="footer-action-box">
+                    <span id="email-text">dev.identity@example.com</span>
+                    <button class="copy-pill" onclick="copyToClipboard('dev.identity@example.com')">Copy</button>
+                </div>
+            </div>
+
+            <div class="footer-item">
+                <span class="footer-label">Phone</span>
+                <div class="footer-action-box">
+                    <span>+1 (234) 567-890</span>
+                    <a href="tel:+1234567890" class="call-pill">Call</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="social-links">
+                <a href="#" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+                <a href="#" target="_blank" aria-label="GitHub">GitHub</a>
+                <a href="#" target="_blank" aria-label="Twitter">Twitter</a>
+            </div>
+            <p class="copyright">© 2026 Professional Identity. Built with HTML/CSS/JS.</p>
+            <a href="#home" class="back-to-top">↑ Back to Top</a>
+        </div>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
