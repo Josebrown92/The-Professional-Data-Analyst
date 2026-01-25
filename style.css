@@ -160,6 +160,38 @@ body {
     width: 100%;
 }; 
 
+#typewriter {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5); /* Cybersecurity glow */
+}
+
+.cursor {
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-left: 3px;
+    animation: blink-cursor 0.8s infinite;
+}
+
+@keyframes blink-cursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.tagline {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.statement {
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+    font-size: 1.1rem;
+    color: #94a3b8; /* Muted slate for the supporting text */
+}
+
 /* Grid Layouts */
 /* 1. Universal Section Styling */
 .section {
@@ -200,6 +232,34 @@ body {
     border-radius: 15px;
     text-align: left; /* Keep text left-aligned for readability */
     transition: box-shadow 0.3s ease;
+}
+
+/* Styling for company links within the experience section */
+.company-links {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 5px;
+}
+
+.company-links a {
+    color: var(--primary-color);
+    font-size: 0.85rem;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.company-links a:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+    filter: drop-shadow(0 0 5px var(--primary-color));
+}
+
+/* Ensures the bullets don't overlap with icons */
+.job-bullets {
+    margin-top: 10px;
+    padding-left: 20px;
 }
 
 /* Pulsing Header Links */
@@ -369,21 +429,94 @@ body {
     overflow: hidden;
 }
 
-/*
-.project-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures image fills space without stretching 
-    transition: transform 0.5s ease;
-}
- */
-/* Scraper Specific Background */
-.scraper-bg {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+
+/* Pro Analyst Background */
+.pro-analyst-bg {
+    background: radial-gradient(circle at center, #1e293b 0%, #020617 100%);
+    height: 180px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.pro-emoji {
+    font-size: 3.5rem;
+    z-index: 5;
+    filter: drop-shadow(0 0 20px var(--primary-color));
+}
+
+/* Floating Data Points Animation */
+.data-point {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    opacity: 0.5;
+    filter: blur(1px);
+}
+
+.p1 { top: 20%; left: 20%; animation: float-data 4s infinite linear; }
+.p2 { top: 60%; left: 80%; animation: float-data 6s infinite linear reverse; }
+.p3 { top: 80%; left: 30%; animation: float-data 5s infinite linear; }
+
+@keyframes float-data {
+    0% { transform: translate(0, 0); opacity: 0.3; }
+    50% { transform: translate(20px, -20px); opacity: 0.8; }
+    100% { transform: translate(0, 0); opacity: 0.3; }
+}
+
+/* Scraper Specific Background */
+/* Scraper Background */
+.scraper-bg {
+    background: radial-gradient(circle at center, #111827 0%, #020617 100%);
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.scraper-emoji {
+    font-size: 3.5rem;
+    z-index: 5;
+    filter: drop-shadow(0 0 15px #ff4d4d); /* A subtle red glow for the spider */
+}
+
+/* Web Nodes Animation (Data points being "scraped") */
+.web-node {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    opacity: 0.6;
+}
+
+/* Positioning and custom movement for each node */
+.n1 { top: 10%; left: 10%; animation: scrape-in 3s infinite linear; }
+.n2 { top: 80%; left: 20%; animation: scrape-in 4s infinite linear 1s; }
+.n3 { top: 20%; left: 85%; animation: scrape-in 3.5s infinite linear 0.5s; }
+.n4 { top: 75%; left: 80%; animation: scrape-in 5s infinite linear 2s; }
+
+@keyframes scrape-in {
+    0% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        /* Moves toward the center where the spider is */
+        transform: translate(calc(50% - var(--x, 50%)), calc(50% - var(--y, 50%)));
+        left: 50%;
+        top: 50%;
+        opacity: 0;
+    }
 }
 
 

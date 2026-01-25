@@ -90,3 +90,53 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+
+const textElement = document.getElementById('typewriter');
+
+// Phrases that showcase your multi-stack focus
+const phrases = [
+    "Data Analyst.",
+    "Full-Stack Web Developer.",
+    "Python Programmer.",
+    "Cybersecurity Enthusiast.",
+    "Javascript Developer.",
+    "Nobel Leadership Fellow."
+];
+
+let phraseIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let typeSpeed = 100;
+
+function typeEffect() {
+    const currentPhrase = phrases[phraseIndex];
+    
+    if (isDeleting) {
+        // Deleting text
+        textElement.textContent = currentPhrase.substring(0, charIndex - 1);
+        charIndex--;
+        typeSpeed = 50; 
+    } else {
+        // Typing text
+        textElement.textContent = currentPhrase.substring(0, charIndex + 1);
+        charIndex++;
+        typeSpeed = 150;
+    }
+
+    // Determine when to switch states
+    if (!isDeleting && charIndex === currentPhrase.length) {
+        // Pause at the end of the phrase
+        isDeleting = true;
+        typeSpeed = 2000; 
+    } else if (isDeleting && charIndex === 0) {
+        // Move to the next phrase
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        typeSpeed = 500;
+    }
+
+    setTimeout(typeEffect, typeSpeed);
+}
+
+document.addEventListener('DOMContentLoaded', typeEffect);

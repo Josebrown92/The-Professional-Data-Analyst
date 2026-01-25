@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dev Portfolio | Professional Identity</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>👨‍💻</text></svg>">
+    <title>Joseph Njoroge | Data Analyst & Web Developer Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo"><img src="logo.jpeg" alt="JoForge Studio" width="60" height="60"></div>
+        <div class="logo"> </div>
+       
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#resume">Resume</a></li>
@@ -26,7 +28,7 @@
         <p class="tagline">
             I am a <span id="typewriter"></span><span class="cursor">|</span>
         </p>
-        <p class="statement">Building secure, scalable web solutions and solving complex digital puzzles.</p>
+        <p class="statement">Building secure, scalable web solutions and solving complex digital puzzles through data-driven insights.</p>
     </div>
 </header>
 
@@ -35,27 +37,43 @@
     
     <div class="resume-grid">
         <div class="resume-item">
-            <div class="resume-icon">💼</div>
-            <h3><a href="#" class="pulse-link">Experience</a></h3>
-            <div class="resume-detail">
-                <p><strong>Leadership & Web Fellow</strong>@Nobel</p>
-                <span class="date">Jan 2026- Present</span>
-                <ul class="job-bullets">
-                    <li>Developing responsive web interfaces and core frontend foundations.</li>
-                    <li>Mastering technical pitching and public speaking to present data-driven solutions to stakeholders.</li>
-                    <li>Collaborating in leadership workshops to manage project lifecycles and team dynamics.</li>
-                </ul>
-            </div>
-            <div class="resume-detail">
-                <p class="job-title"><strong>Branch Secretary (Nakuru)</strong> @Elimisha Empowerment Org</p>
-                <span class="date">2025 - present</span>
-                <ul class="job-bullets">
-                    <li>Overseeing branch documentation and data integrity for community programs.</li>
-                    <li>Coordinating communication between the regional leadership and the local members.</li>
-                    <li>Organizing and documenting meeting minutes to track organization KPIs and progress.</li>
-                </ul>
-            </div>
-        </div>
+    <div class="resume-icon">💼</div>
+    <h3><a href="#" class="pulse-link">Experience</a></h3>
+    
+    <div class="resume-detail">
+        <p>
+            <strong>Leadership & Web Fellow</strong> 
+            <span class="company-links">
+                @Nobel 
+                <a href="https://nobelnavigators.com/" target="_blank"><i class="fa-solid fa-globe">Website</i></a>
+                <a href="https://www.linkedin.com/company/nobel-community/posts/?feedView=all" target="_blank"><i class="fa-brands fa-linkedin">LinkedIn</i></a>
+            </span>
+        </p>
+        <span class="date">Jan 2026- Present</span>
+        <ul class="job-bullets">
+            <li>Developing responsive web interfaces and core frontend foundations.</li>
+            <li>Mastering technical pitching and public speaking to present data-driven solutions to stakeholders.</li>
+            <li>Collaborating in leadership workshops to manage project lifecycles and team dynamics.</li>
+        </ul>
+    </div>
+
+    <div class="resume-detail">
+        <p class="job-title">
+            <strong>Branch Secretary (Nakuru)</strong> 
+            <span class="company-links">
+                @Elimisha Empowerment Org
+                <a href="https://elimishaempowerment.org/" target="_blank"><i class="fa-solid fa-globe">website</i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-facebook">social</i></a>
+            </span>
+        </p>
+        <span class="date">2025 - present</span>
+        <ul class="job-bullets">
+            <li>Overseeing branch documentation and data integrity for community programs.</li>
+            <li>Coordinating communication between the regional leadership and the local members.</li>
+            <li>Organizing and documenting meeting minutes to track organization KPIs and progress.</li>
+        </ul>
+    </div>
+</div>
 
         <div class="resume-item">
             <div class="resume-icon">🎓</div>
@@ -104,22 +122,31 @@
     <h2 class="section-title">Featured Projects</h2>
     
     <div class="projects-grid">
-        <article class="project-card">
-            <div class="project-image">
-                <img src="project1-thumb.jpg" alt="E-Commerce API">
-            </div>
-            <div class="project-info">
-                <h3>Secure E-Commerce API</h3>
-                <p>A RESTful backend built with Node.js, featuring JWT authentication and Stripe integration.</p>
-                <div class="project-tags">
-                    <span>Node.js</span> <span>MongoDB</span> <span>Docker</span>
-                </div>
-                <div class="project-links">
-                    <a href="#" class="btn-primary">View Repo</a>
-                    <a href="#" class="btn-secondary">Live Demo</a>
-                </div>
-            </div>
-        </article>
+       <article class="project-card">
+    <div class="project-image pro-analyst-bg">
+        <span class="pro-emoji">🧪</span>
+        <div class="data-point p1"></div>
+        <div class="data-point p2"></div>
+        <div class="data-point p3"></div>
+    </div>
+    
+    <div class="project-info">
+        <div class="status-tag">Senior Portfolio</div>
+        <h3>The Professional Data Analyst</h3>
+        <p>A comprehensive suite of end-to-end data projects: from cleaning messy HR surveys to extracting strategic insights from the App Store and Hacker News.</p>
+        
+        <div class="project-tags">
+            <code>Python</code>
+            <code>Pandas</code>
+            <code>Jupyter</code>
+            <code>Matplotlib</code>
+        </div>
+
+        <div class="project-links">
+            <a href="https://github.com/Josebrown92/The-Professional-Data-Analyst.git" target="_blank" class="btn-primary">Explore Case Studies</a>
+        </div>
+    </div>
+</article>
 
         <article class="project-card">
             <div class="project-image scanner-bg">
@@ -140,20 +167,31 @@
         </article>
 
         <article class="project-card">
-            <div class="project-image scraper-bg">
-                <i class="project-icon">🕷️</i>
-            </div>
-            <div class="project-info">
-                <h3>Automated Web Data Scraper</h3>
-                <p>A robust Python-based tool designed to extract, clean, and structure unstructured web data into analysis-ready formats.</p>
-                <div class="project-tags">
-                    <code>Python</code> <code>BeautifulSoup</code> <code>Selenium</code>
-                </div>
-                <div class="project-links">
-                   <a href="https://github.com/Josebrown92/web-scraper.git" target="_blank" class="btn-primary">View Code</a>
-                </div>
-            </div>
-        </article>
+            <article class="project-card">
+    <div class="project-image scraper-bg">
+        <span class="scraper-emoji">🕷️</span>
+        <div class="web-node n1"></div>
+        <div class="web-node n2"></div>
+        <div class="web-node n3"></div>
+        <div class="web-node n4"></div>
+    </div>
+    
+    <div class="project-info">
+        <div class="status-tag">Active Crawler</div>
+        <h3>Automated Web Scraper</h3>
+        <p>A high-performance Python scraper designed to bypass restrictions and extract structured data from complex websites.</p>
+        
+        <div class="project-tags">
+            <code>BeautifulSoup</code>
+            <code>Requests</code>
+            <code>CSV/JSON</code>
+        </div>
+
+        <div class="project-links">
+            <a href="#" class="btn-primary">View Code</a>
+        </div>
+    </div>
+</article>
     </div>
 </section>
 
