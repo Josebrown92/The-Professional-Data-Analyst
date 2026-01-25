@@ -220,6 +220,15 @@ body {
     transform: scale(0.9); /* Diminish */
 }
 
+.job-title {
+   /* color: var(--primary-color);  */
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 5px;
+    display: block; /* Ensures the title doesn't crowd the date */
+}
+
 /* Skills Container and Pills */
 .skills-container {
     display: flex;
@@ -250,25 +259,81 @@ body {
     transform: scale(0.85); /* Diminish */
 }
 
-/* Detail Styling */
+/* Detail Styling for Certifications */
+
+/* Container for the certification list */
 .resume-detail {
     margin-bottom: 20px;
 }
 
-.date {
-    display: block;
-    font-size: 0.8rem;
-    color: #888;
-    margin-bottom: 5px;
+/* Individual certification lines */
+.resume-detail p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03); /* Subtle background for each row */
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    border-left: 3px solid transparent;
+    transition: all 0.3s ease;
 }
 
-.margin-top { margin-top: 30px; }
+/* Hover effect for the row */
+.resume-detail p:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-left-color: var(--primary-color);
+    transform: translateX(5px);
+}
 
-.instruction {
+/* Styling the "Check out" buttons */
+.btn-secondary {
     font-size: 0.75rem;
-    color: #666;
-    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Prevents button text from wrapping */
+    margin-left: 15px;
 }
+
+.btn-secondary:hover {
+    background: var(--primary-color);
+    color: #000;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
+}
+
+/* The Pulse Link for the "Certifications" Header */
+.pulse-link {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.pulse-link:hover {
+    color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .resume-detail p {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .btn-secondary {
+        margin-left: 0;
+        align-self: flex-end;
+    }
+}
+
 
 /* Projects Layout */
 .projects-grid {
@@ -304,12 +369,23 @@ body {
     overflow: hidden;
 }
 
+/*
 .project-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures image fills space without stretching */
+    object-fit: cover; /* Ensures image fills space without stretching 
     transition: transform 0.5s ease;
 }
+ */
+/* Scraper Specific Background */
+.scraper-bg {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+}
+
 
 .project-card:hover .project-image img {
     transform: scale(1.1); /* Slight zoom on hover */
@@ -321,6 +397,8 @@ body {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .project-info h3 {
@@ -334,21 +412,96 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    justify-content: center;
 }
 
-.project-tags span {
+.project-tags code {
     font-size: 0.75rem;
     background: rgba(0, 123, 255, 0.1);
     color: var(--primary-color);
     padding: 4px 10px;
-    border-radius: 4px;
+    border: 1px solid rgba(0, 212, 255, 0.3);
     font-weight: bold;
+}
+
+/* The background of the project card top */
+.scanner-bg {
+    background: #0f172a; /* Deep space navy */
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* The Satellite Emoji */
+.scanning-emoji {
+    font-size: 3.5rem;
+    z-index: 2;
+    filter: drop-shadow(0 0 10px var(--primary-color));
+}
+
+/* The Animated Pulse Ring */
+.radar-ring {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    animation: radar-ping 2.5s infinite ease-out;
+    opacity: 0;
+}
+
+@keyframes radar-ping {
+    0% {
+        width: 10px;
+        height: 10px;
+        opacity: 0.8;
+    }
+    100% {
+        width: 250px;
+        height: 250px;
+        opacity: 0;
+        border-width: 1px;
+    }
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 8px 20px;
+    background: var(--primary-color);
+    color: #000;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.status-tag {
+    font-family: 'Consolas', monospace;
+    font-size: 0.7rem;
+    color: var(--primary-color);
+    background: rgba(0, 212, 255, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 10px;
 }
 
 .project-links {
     margin-top: auto; /* Pushes buttons to the bottom of the box */
     display: flex;
     gap: 15px;
+    justify-content: center;
+    width: 100%;
 }
 
 .btn-primary, .btn-secondary {
@@ -359,7 +512,7 @@ body {
     font-weight: 500;
 }
 
-.btn-primary { background: var(--primary-color); color: white; }
+.btn-primary { background: var(--primary-color); color: #000; }
 .btn-secondary { border: 1px solid var(--primary-color); color: var(--primary-color); }
 
 
