@@ -17,19 +17,287 @@ body {
 /* Navbar */
 .navbar {
     display: flex;
-    justify-content: space-between;
-    padding: 20px 5%;
-    background: rgba(18, 18, 18, 0.9);
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+    padding: 0 16px;
+    background: rgba(18, 18, 18, 0.94);
     position: fixed;
-    width: 90%;
+    top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1000;
+    backdrop-filter: blur(6px);
 }
+
+body {
+    padding-top: 72px; /* account for fixed navbar */
+}
+
+.brand {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+
+.brand-logo {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--primary-color);
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #fff;
+}
+
+.brand-text {
+    letter-spacing: 0.5px;
+}
+
+.nav-toggle {
+    display: flex !important;
+    position: fixed;
+    top: 16px;
+    right: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 42px;
+    height: 34px;
+    padding: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    background: rgba(10, 10, 10, 0.85);
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.35);
+}
+
+.nav-toggle span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: #ffffff;
+    border-radius: 999px;
+}
+
+.nav-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.nav-toggle span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: #ffffff;
+    border-radius: 999px;
+}
+
+.nav-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
 
 .nav-links {
     list-style: none;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: min(280px, 25vw);
+    height: 100vh;
+    background: rgba(5, 7, 14, 0.98);
+    box-shadow: -8px 0 30px rgba(0, 0, 0, 0.5);
     display: flex;
-    gap: 20px;
+    flex-direction: column;
+    gap: 0;
+    padding: 90px 18px 20px;
+    overflow-y: auto;
+    z-index: 1100;
+    transition: right 0.35s ease, opacity 0.35s ease;
+    opacity: 0;
+    pointer-events: none;
 }
+
+.nav-links.show {
+    right: 0;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.nav-links li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-links li a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.05rem;
+    padding: 14px 0;
+    display: block;
+}
+
+
+@media (max-width: 1400px) {
+    .nav-toggle {
+        display: flex;
+    }
+
+    .contact-btn {
+        display: none;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: min(320px, 75vw);
+        height: 100vh;
+        background: rgba(5, 7, 14, 0.97);
+        box-shadow: -8px 0 30px rgba(0, 0, 0, 0.5);
+        flex-direction: column;
+        gap: 0;
+        padding: 90px 20px 20px;
+        overflow-y: auto;
+        z-index: 1100;
+        transition: right 0.35s ease, opacity 0.35s ease;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .nav-links.show {
+        right: 0;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .nav-links li {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 14px 10px;
+        width: 100%;
+    }
+
+    .nav-links li:first-child a {
+        padding-top: 0;
+    }
+}
+
+
+
+.nav-links::-webkit-scrollbar {
+    height: 5px;
+}
+
+.nav-links::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 99px;
+}
+
+.nav-links li {
+    min-width: max-content;
+}
+
+.contact-btn {
+    display: none; /* hidden to rely on slide-out menu for all widths */
+    margin-left: 16px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #00bcd4, #007bff);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.contact-btn:hover {
+    transform: translateY(-1px);
+    opacity: 0.95;
+}
+
+@media (max-width: 860px) {
+    .nav-toggle {
+        display: flex;
+    }
+
+    .contact-btn {
+        display: none;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: min(75vw, 300px);
+        height: 100vh;
+        background: rgba(5, 7, 14, 0.97);
+        box-shadow: -8px 0 30px rgba(0, 0, 0, 0.5);
+        flex-direction: column;
+        gap: 0;
+        padding: 90px 20px 20px;
+        overflow-y: auto;
+        z-index: 1100;
+        transform: translateX(0);
+        transition: right 0.35s ease, opacity 0.35s ease;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .nav-links.show {
+        right: 0;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .nav-links li {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 14px 10px;
+        width: 100%;
+    }
+
+    .nav-links li:first-child a {
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .brand-text {
+        display: none;
+    }
+
+    .navbar {
+        padding: 12px 4%;
+    }
+}
+
+@media (max-width: 500px) {
+    .brand-text {
+        display: none;
+    }
+
+    .navbar {
+        padding: 12px 4%;
+    }
+}
+
 
 /* Navigation Link Styling */
 .nav-links li a {
@@ -240,6 +508,10 @@ body {
     align-items: center;
     gap: 8px;
     margin-left: 5px;
+    flex-wrap: wrap;
+    max-width: 100%;
+    overflow: hidden;
+    word-break: break-word;
 }
 
 .company-links a {
@@ -248,6 +520,23 @@ body {
     text-decoration: none;
     opacity: 0.7;
     transition: 0.3s;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+}
+
+.resume-detail p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03); /* Subtle background for each row */
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    border-left: 3px solid transparent;
+    transition: all 0.3s ease;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .company-links a:hover {

@@ -10,16 +10,27 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo"> </div>
-       
+        <a href="#home" class="brand">
+            <span class="brand-logo">JN</span>
+            <span class="brand-text">Joseph Njoroge</span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#resume">Resume</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="more-projects.html">More Projects</a></li>
             <li><a href="#labs">Lab Writeups</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
+       
 
   <header id="home" class="hero">
     <div class="hero-content">
@@ -167,35 +178,48 @@
         </article>
 
         <article class="project-card">
-            <article class="project-card">
-    <div class="project-image scraper-bg">
-        <span class="scraper-emoji">🕷️</span>
-        <div class="web-node n1"></div>
-        <div class="web-node n2"></div>
-        <div class="web-node n3"></div>
-        <div class="web-node n4"></div>
-    </div>
-    
-    <div class="project-info">
-        <div class="status-tag">Active Crawler</div>
-        <h3>Automated Web Scraper</h3>
-        <p>A high-performance Python scraper designed to bypass restrictions and extract structured data from complex websites.</p>
-        
-        <div class="project-tags">
-            <code>BeautifulSoup</code>
-            <code>Requests</code>
-            <code>CSV/JSON</code>
-        </div>
+            <div class="project-image scraper-bg">
+                <span class="scraper-emoji">🕷️</span>
+                <div class="web-node n1"></div>
+                <div class="web-node n2"></div>
+                <div class="web-node n3"></div>
+                <div class="web-node n4"></div>
+            </div>
+            
+            <div class="project-info">
+                <div class="status-tag">Active Crawler</div>
+                <h3>Automated Web Scraper</h3>
+                <p>A high-performance Python scraper designed to bypass restrictions and extract structured data from complex websites.</p>
+                
+                <div class="project-tags">
+                    <code>BeautifulSoup</code>
+                    <code>Requests</code>
+                    <code>CSV/JSON</code>
+                </div>
 
-        <div class="project-links">
-            <a href="#" class="btn-primary">View Code</a>
-        </div>
-    </div>
-</article>
+                <div class="project-links">
+                    <a href="#" class="btn-primary">View Code</a>
+                </div>
+            </div>
+        </article>
+
+        <article class="project-card">
+            <div class="project-image" style="background: #0f172a; color:white; display:flex; align-items:center; justify-content:center; min-height:220px;">
+                <span class="status-tag" style="background: rgba(0,0,0,0.4); padding: 8px 12px; border-radius: 10px;">More Projects</span>
+            </div>
+            <div class="project-info">
+                <h3>See More Projects</h3>
+                <p>Visit the extended projects page for additional case studies and demonstrations.</p>
+                <div class="project-links">
+                    <a href="more-projects.html" class="btn-primary">More Projects</a>
+                </div>
+            </div>
+        </article>
+
     </div>
 </section>
 
-   <section id="analysis" class="section">
+   <section id="labs" class="section">
     <h2 class="section-title">Data Analysis Case Studies</h2>
     
     <div class="labs-container">

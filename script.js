@@ -139,4 +139,24 @@ function typeEffect() {
     setTimeout(typeEffect, typeSpeed);
 }
 
-document.addEventListener('DOMContentLoaded', typeEffect);
+document.addEventListener('DOMContentLoaded', () => {
+    typeEffect();
+
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+            const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', String(!expanded));
+            navLinks.classList.toggle('show');
+        });
+
+        document.querySelectorAll('.nav-links li a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('show');
+                navToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+    }
+});

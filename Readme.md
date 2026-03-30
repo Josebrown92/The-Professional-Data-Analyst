@@ -20,5 +20,16 @@ This repository contains the source code for my professional digital portfolio. 
 ```text
 ├── index.html       # Main content and semantic structure
 ├── style.css        # Professional Data-Analysis aesthetic (Dark Mode)
-├── script.js       # Typewriter logic & UI micro-interactions
+├── script.js        # Typewriter logic & UI micro-interactions
+├── more-projects.html # Additional project listings page
 └── /images          # Visualization exports and project screenshots
+```
+
+## 📝 What was updated
+- Added a fixed `navbar` logo and fully visible hamburger menu toggle (desktop + mobile).
+- Implemented a responsive slide-out side menu for navigation links (Projects, Labs, Contact, etc.).
+- Fixed the “Lab Writeups” anchor target by ensuring `id="labs"` exists for navigation.
+- Corrected resume “experience” links so they stay inside the card container and don’t overflow.
+- Kept the featured projects section and added a new “See More Projects” card linking to `more-projects.html`.
+- Created `more-projects.html` with additional project placeholders.
+- Added explicit “More Projects” nav item to support additional project exploration.
