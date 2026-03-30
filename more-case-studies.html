@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>👨‍💻</text></svg>">
+    <title>Case Studies | Joseph Njoroge</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="brand">
+            <span class="brand-logo">JN</span>
+            <span class="brand-text">Joseph Njoroge</span>
+        </a>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#resume">Resume</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="more-projects.html">More Projects</a></li>
+            <li><a href="index.html#labs">Lab Writeups</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="case-studies" class="section" style="padding-top: 100px;">
+        <h2 class="section-title">Data Analysis Case Studies</h2>
+        <p class="section-subtitle">Comprehensive analysis of real-world business challenges and data-driven solutions</p>
+        
+        <div class="labs-container">
+            <!-- Case Study 1: E-Commerce Sales -->
+            <article class="lab-card">
+                <div class="lab-header">
+                    <span class="status-dot analysis-dot"></span>
+                    <span class="lab-category">Project: E-Commerce Sales Insights</span>
+                </div>
+                
+                <div class="lab-body">
+                    <div class="lab-section">
+                        <h4><i class="icon">📊</i> Business Problem</h4>
+                        <p>Identifying seasonal churn rates and declining customer lifetime value (CLV) across the Q3-Q4 period. The e-commerce platform was experiencing unexpected customer attrition during peak shopping seasons.</p>
+                    </div>
+
+                    <div class="lab-section">
+                        <h4><i class="icon">🧪</i> Methodology</h4>
+                        <p>Extracted data via SQL from transactional databases, performed exploratory data analysis (EDA) in Python (Pandas, NumPy), and handled missing values using mean-imputation and forward-fill strategies. Applied RFM segmentation and cohort analysis.</p>
+                    </div>
+
+                    <div class="lab-meta-grid">
+                        <div class="meta-item">
+                            <strong>Tech Stack:</strong>
+                            <code>Python</code> <code>Pandas</code> <code>SQL</code> <code>Tableau</code>
+                        </div>
+                        <div class="meta-item">
+                            <strong>Duration:</strong>
+                            <code>3 weeks</code>
+                        </div>
+                    </div>
+
+                    <div class="lab-screenshot">
+                        <div class="image-placeholder">
+                            <img src="Screenshot (35).png" alt="Sales Trend Heatmap" width="100%" height="250px">
+                            [Visualization: Sales Trend Correlation Heatmap]
+                        </div>
+                    </div>
+
+                    <div class="lab-lessons">
+                        <h4><i class="icon">📈</i> Key Insights & Results</h4>
+                        <ul>
+                            <li>Discovered a 15% drop in retention linked to checkout latency issues.</li>
+                            <li>Automated the weekly reporting pipeline, saving 4 hours of manual entry per week.</li>
+                            <li>Recommended a targeted email campaign that recovered 5% of churned users.</li>
+                            <li>Identified product categories with highest churn, enabling strategic inventory optimization.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Case Study 2: Healthcare Analytics -->
+            <article class="lab-card">
+                <div class="lab-header">
+                    <span class="status-dot analysis-dot"></span>
+                    <span class="lab-category">Project: Healthcare Patient Analytics</span>
+                </div>
+                
+                <div class="lab-body">
+                    <div class="lab-section">
+                        <h4><i class="icon">📊</i> Business Problem</h4>
+                        <p>A healthcare provider needed to reduce patient no-show rates (currently at 22%) and optimize appointment scheduling to improve operational efficiency and reduce lost revenue.</p>
+                    </div>
+
+                    <div class="lab-section">
+                        <h4><i class="icon">🧪</i> Methodology</h4>
+                        <p>Built a predictive model using logistic regression and random forest algorithms on historical patient data (35,000+ records). Engineered features from appointment history, patient demographics, and clinical data. Implemented cross-validation with stratified k-fold approach.</p>
+                    </div>
+
+                    <div class="lab-meta-grid">
+                        <div class="meta-item">
+                            <strong>Tech Stack:</strong>
+                            <code>Python</code> <code>Scikit-learn</code> <code>XGBoost</code> <code>SQL</code>
+                        </div>
+                        <div class="meta-item">
+                            <strong>Duration:</strong>
+                            <code>4 weeks</code>
+                        </div>
+                    </div>
+
+                    <div class="lab-screenshot">
+                        <div class="image-placeholder">
+                            [Visualization: Model Performance Comparison - ROC Curves & Confusion Matrix]
+                        </div>
+                    </div>
+
+                    <div class="lab-lessons">
+                        <h4><i class="icon">📈</i> Key Insights & Results</h4>
+                        <ul>
+                            <li>Developed predictive model achieving 87% accuracy in identifying high-risk no-show patients.</li>
+                            <li>Implemented automated reminder system targeting high-risk appointments, reducing no-shows by 31%.</li>
+                            <li>Quantified impact: $150K+ annual revenue recovery from reduced missed appointments.</li>
+                            <li>Created actionable dashboard for clinic managers to monitor real-time prediction scores.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Case Study 3: Marketing Attribution -->
+            <article class="lab-card">
+                <div class="lab-header">
+                    <span class="status-dot analysis-dot"></span>
+                    <span class="lab-category">Project: Multi-Channel Marketing Attribution</span>
+                </div>
+                
+                <div class="lab-body">
+                    <div class="lab-section">
+                        <h4><i class="icon">📊</i> Business Problem</h4>
+                        <p>Marketing team was unable to accurately attribute revenue to different marketing channels (email, social media, paid search, organic). Current last-click attribution model was undervaluing top-of-funnel activities.</p>
+                    </div>
+
+                    <div class="lab-section">
+                        <h4><i class="icon">🧪</i> Methodology</h4>
+                        <p>Implemented data-driven attribution modeling using multi-touch attribution techniques. Analyzed 6 months of customer journey data (500K+ journeys) across all touchpoints. Applied Shapley value approach for fair credit allocation between channels.</p>
+                    </div>
+
+                    <div class="lab-meta-grid">
+                        <div class="meta-item">
+                            <strong>Tech Stack:</strong>
+                            <code>Python</code> <code>Pandas</code> <code>Google Analytics 4</code> <code>Power BI</code>
+                        </div>
+                        <div class="meta-item">
+                            <strong>Duration:</strong>
+                            <code>5 weeks</code>
+                        </div>
+                    </div>
+
+                    <div class="lab-screenshot">
+                        <div class="image-placeholder">
+                            [Visualization: Attribution Model Comparison - Revenue Distribution Across Channels]
+                        </div>
+                    </div>
+
+                    <div class="lab-lessons">
+                        <h4><i class="icon">📈</i> Key Insights & Results</h4>
+                        <ul>
+                            <li>Revealed that organic search was undervalued by 45% under last-click model; adjusted budget allocation accordingly.</li>
+                            <li>Implemented new attribution model reducing channel overlap misattribution by 60%.</li>
+                            <li>Enabled data-driven marketing budget optimization, resulting in 23% increase in ROI.</li>
+                            <li>Created automated monthly attribution reports, replacing manual Excel-based process.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Case Study 4: Supply Chain Optimization -->
+            <article class="lab-card">
+                <div class="lab-header">
+                    <span class="status-dot analysis-dot"></span>
+                    <span class="lab-category">Project: Supply Chain Demand Forecasting</span>
+                </div>
+                
+                <div class="lab-body">
+                    <div class="lab-section">
+                        <h4><i class="icon">📊</i> Business Problem</h4>
+                        <p>Manufacturing company faced significant inventory challenges: overstock in slow-moving items (15% excess inventory) and stockouts in high-demand products (8% lost sales). Traditional manual forecasting methods were inaccurate.</p>
+                    </div>
+
+                    <div class="lab-section">
+                        <h4><i class="icon">🧪</i> Methodology</h4>
+                        <p>Implemented time-series forecasting using ARIMA, Prophet, and LSTM neural networks. Analyzed 3 years of historical sales data (2,500+ SKUs). Incorporated external factors: seasonality, promotions, economic indicators. Validated models using MAPE and RMSE metrics.</p>
+                    </div>
+
+                    <div class="lab-meta-grid">
+                        <div class="meta-item">
+                            <strong>Tech Stack:</strong>
+                            <code>Python</code> <code>TensorFlow</code> <code>Statsmodels</code> <code>SQL</code>
+                        </div>
+                        <div class="meta-item">
+                            <strong>Duration:</strong>
+                            <code>6 weeks</code>
+                        </div>
+                    </div>
+
+                    <div class="lab-screenshot">
+                        <div class="image-placeholder">
+                            [Visualization: Demand Forecast vs. Actual Sales - Time Series Analysis]
+                        </div>
+                    </div>
+
+                    <div class="lab-lessons">
+                        <h4><i class="icon">📈</i> Key Insights & Results</h4>
+                        <ul>
+                            <li>Achieved 94% forecast accuracy (MAPE) using ensemble of Prophet and LSTM models.</li>
+                            <li>Reduced excess inventory by 22%, freeing up $2.3M in working capital.</li>
+                            <li>Decreased stockouts by 67%, improving customer satisfaction scores by 12%.</li>
+                            <li>Implemented automated forecast dashboard with weekly retraining pipeline.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Case Study 5: Customer Segmentation -->
+            <article class="lab-card">
+                <div class="lab-header">
+                    <span class="status-dot analysis-dot"></span>
+                    <span class="lab-category">Project: Customer Segmentation & Lifetime Value</span>
+                </div>
+                
+                <div class="lab-body">
+                    <div class="lab-section">
+                        <h4><i class="icon">📊</i> Business Problem</h4>
+                        <p>SaaS company was using a one-size-fits-all approach to customer management, resulting in inefficient marketing spend and low retention rates. Leadership needed data-driven customer segments for targeted strategies.</p>
+                    </div>
+
+                    <div class="lab-section">
+                        <h4><i class="icon">🧪</i> Methodology</h4>
+                        <p>Conducted behavioral clustering using K-means and hierarchical clustering algorithms on 50K+ customer records. Engineered 25+ features from usage patterns, engagement metrics, and subscription data. Validated segment quality using silhouette analysis and domain expertise review.</p>
+                    </div>
+
+                    <div class="lab-meta-grid">
+                        <div class="meta-item">
+                            <strong>Tech Stack:</strong>
+                            <code>Python</code> <code>Scikit-learn</code> <code>Tableau</code> <code>SQL</code>
+                        </div>
+                        <div class="meta-item">
+                            <strong>Duration:</strong>
+                            <code>3 weeks</code>
+                        </div>
+                    </div>
+
+                    <div class="lab-screenshot">
+                        <div class="image-placeholder">
+                            [Visualization: Customer Segments - 2D Projection & Segment Characteristics Heatmap]
+                        </div>
+                    </div>
+
+                    <div class="lab-lessons">
+                        <h4><i class="icon">📈</i> Key Insights & Results</h4>
+                        <ul>
+                            <li>Identified 5 distinct customer segments with up to 4x difference in lifetime value.</li>
+                            <li>Developed segment-specific retention strategies, improving overall retention by 18%.</li>
+                            <li>Implemented predictive churn model for high-value segments, enabling proactive interventions.</li>
+                            <li>Reduced customer acquisition cost via better targeting, improving marketing efficiency by 31%.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="cta-section">
+            <h3>Interested in seeing my work in action?</h3>
+            <p>Contact me to discuss how data-driven analysis can solve your business challenges.</p>
+            <a href="index.html#contact" class="cta-button">Get In Touch</a>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-container">
+            <p style="text-align:center; margin: 30px 0 10px; color:#94a3b8;">© 2026 Joseph Njoroge. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,22 +1,24 @@
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const href = this.getAttribute('href');
+        const targetElement = document.querySelector(href);
+        
+        // Only prevent default if target element exists
+        if (targetElement) {
+            e.preventDefault();
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
     });
 });
 
-// Simple Scroll Reveal Effect
-window.addEventListener('scroll', () => {
+// Initialize all sections to visible state
+document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('.section');
     sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        if (sectionTop < window.innerHeight - 100) {
-            section.style.opacity = '1';
-            section.style.transform = 'translateY(0)';
-        }
+        section.style.opacity = '1';
     });
 });
 
@@ -61,35 +63,40 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // 3. Optional: Scroll-to-Top Button Visibility
 // If you want the "Back to Top" link to only appear after scrolling down
+// Back to Top Button Visibility - Only if element exists
 const backToTop = document.querySelector('.back-to-top');
-window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 500) {
-        backToTop.style.opacity = "1";
-    } else {
-        backToTop.style.opacity = "0.5";
-    }
-});
+if (backToTop) {
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 500) {
+            backToTop.style.opacity = "1";
+        } else {
+            backToTop.style.opacity = "0.5";
+        }
+    });
+}
 
 // Add this to your script.js to highlight the current section in the nav
-window.addEventListener('scroll', () => {
-    let current = '';
-    const sections = document.querySelectorAll('section, header');
-    const navItems = document.querySelectorAll('.nav-links li a');
+// (Disabled to prevent carousel interference)
+// window.addEventListener('scroll', () => {
+//     let current = '';
+//     const sections = document.querySelectorAll('section, header');
+//     const navItems = document.querySelectorAll('.nav-links li a');
+//
+//     sections.forEach(section => {
+//         const sectionTop = section.offsetTop;
+//         if (pageYOffset >= sectionTop - 60) {
+//             current = section.getAttribute('id');
+//         }
+//     });
+//
+//     navItems.forEach(item => {
+//         item.classList.remove('active-link');
+//         if (item.getAttribute('href').includes(current)) {
+//             item.classList.add('active-link');
+//         }
+//     });
+// });
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - 60) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navItems.forEach(item => {
-        item.classList.remove('active-link');
-        if (item.getAttribute('href').includes(current)) {
-            item.classList.add('active-link');
-        }
-    });
-});
 
 
 const textElement = document.getElementById('typewriter');
@@ -110,6 +117,9 @@ let isDeleting = false;
 let typeSpeed = 100;
 
 function typeEffect() {
+    // Only run if the typewriter element exists
+    if (!textElement) return;
+    
     const currentPhrase = phrases[phraseIndex];
     
     if (isDeleting) {
@@ -140,7 +150,11 @@ function typeEffect() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    typeEffect();
+    // Only run typeEffect if the typewriter element exists
+    const textElement = document.getElementById('typewriter');
+    if (textElement) {
+        typeEffect();
+    }
 
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
@@ -159,4 +173,52 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // Modal Functionality
+    const modalButtons = document.querySelectorAll('.btn-view-details');
+    const modals = document.querySelectorAll('.modal');
+    const closeButtons = document.querySelectorAll('.modal-close');
+
+    // Open modal
+    modalButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const modalId = button.getAttribute('data-modal');
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+
+    // Close modal
+    closeButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const modal = e.target.closest('.modal');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+
+    // Close modal when clicking outside
+    modals.forEach(modal => {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            modals.forEach(modal => {
+                modal.classList.remove('active');
+            });
+            document.body.style.overflow = 'auto';
+        }
+    });
 });
